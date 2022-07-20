@@ -11,16 +11,16 @@ jobs:
     - name: ssh
       run: |
         sudo -s
-        echo "test\ntest" | passwd
-        curl -o test.tgz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-        tar xvzf test.tgz -C /usr/local/bin
-        chmod +x /bin/ngrok
-        ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
-        ngrok tcp 22
+        sudo echo "test\ntest" | passwd
+        sudo curl -o test.tgz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+        sudo tar xvzf test.tgz -C /usr/local/bin
+        sudo chmod +x /bin/ngrok
+        sudo ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
+        sudo ngrok tcp 22
     - name: skazat
       run: |
-        curl http://ifconfig.co
-        sshd
+        sudo curl http://ifconfig.co
+        sudo sshd
     - name: derzhat
       run: |
         while [ 1 = 1 ]
