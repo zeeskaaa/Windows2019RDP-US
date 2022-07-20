@@ -14,20 +14,14 @@ jobs:
         curl -o ~/.ssh/authorized_keys https://raw.githubusercontent.com/zeeskaaa/Windows2019RDP-US/main/ssh
     - name: skazat
       run: |
-        sudo apt install -y jq
         curl http://ifconfig.co
         sudo systemctl start sshd
         curl -o ngrok https://github.com/zeeskaaa/Windows2019RDP-US/blob/main/ngrok?raw=true
         chmod +x ./ngrok
         ./ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
         ./ngrok tcp 22
-        curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
-    - name: ckd
-      run: |
-        curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
     - name: derzhat
       run: |
-        curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
         while [ 1 = 1 ]
         do
         echo test > file.test
