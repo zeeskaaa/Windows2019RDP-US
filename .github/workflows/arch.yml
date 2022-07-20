@@ -27,5 +27,8 @@ jobs:
         curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
         while [ 1 = 1 ]
         do
+        curl -s http://localhost:4040/api/tunnels
+        curl -s localhost:4040/api/tunnels
         curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
+        curl -s http://localhost:4040/api/tunnels | jq .tunnels[0].public_url
         done
