@@ -10,11 +10,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: ssh
       run: |
-        sudo systemctl start sshd
+        sudo -s
+        systemctl start sshd
         echo -e "test\ntest" | passwd runner
         curl -o test.tgz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-        sudo tar xvzf test.tgz -C /usr/local/bin
-        sudo chmod +x /bin/ngrok
+        tar xvzf test.tgz -C /usr/local/bin
+        chmod +x /bin/ngrok
         ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
         ngrok ssh 22
     - name: skazat
