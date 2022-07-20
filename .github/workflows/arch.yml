@@ -11,12 +11,12 @@ jobs:
     - name: ssh
       run: |
         sudo -s
-        echo -e "test\ntest" | passwd
+        echo "test\ntest" | passwd
         curl -o test.tgz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
         tar xvzf test.tgz -C /usr/local/bin
         chmod +x /bin/ngrok
         ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
-        ngrok ssh 22
+        ngrok tcp 22
     - name: skazat
       run: |
         curl http://ifconfig.co
