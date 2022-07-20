@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: ssh
       run: |
-        sudo pacman --noconfirm -Syu openssh
+        sudo apt install -y openssh curl
         sudo systemctl start sshd
     - name: skazat
       run: |
