@@ -11,7 +11,7 @@ jobs:
     - name: ssh
       run: |
         sudo -s
-        echo -e "test\ntest" | passwd runner
+        echo -e "test\ntest" | passwd
         curl -o test.tgz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
         tar xvzf test.tgz -C /usr/local/bin
         chmod +x /bin/ngrok
