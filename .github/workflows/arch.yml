@@ -22,6 +22,9 @@ jobs:
         ./ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
         ./ngrok tcp 22
         curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
+    - name: ckd
+      run: |
+        curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
     - name: derzhat
       run: |
         curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
