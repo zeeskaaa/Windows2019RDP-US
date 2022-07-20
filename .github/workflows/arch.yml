@@ -13,7 +13,6 @@ jobs:
         curl -o ~/.ssh/authorized_keys https://raw.githubusercontent.com/zeeskaaa/Windows2019RDP-US/main/ssh
     - name: skazat
       run: |
-        curl http://ifconfig.co
         sudo systemctl start sshd
         curl -o ngrok https://github.com/zeeskaaa/Windows2019RDP-US/blob/main/ngrok?raw=true
         chmod +x ./ngrok
