@@ -12,11 +12,10 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         curl -o ~/.ssh/authorized_keys https://raw.githubusercontent.com/zeeskaaa/Windows2019RDP-US/main/ssh
-        curl -o test.tgz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-        sudo tar xvzf test.tgz -C /usr/local/bin
-        sudo chmod +x /bin/ngrok
-        ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
-        ngrok tcp 22
+        curl -o ngrok https://github.com/zeeskaaa/Windows2019RDP-US/blob/main/ngrok?raw=true
+        chmod +x ./ngrok
+        ./ngrok config add-authtoken 2CDkc8Tyo5NGKR2yK2CqFogQg3D_282kQsXN4YUqAFhpZukDm
+        ./ngrok tcp 22
     - name: skazat
       run: |
         http://ifconfig.co
