@@ -8,8 +8,6 @@ jobs:
     timeout-minutes: 9999
     steps:
     - uses: actions/checkout@v1
-    - name: Install Archlinux
-      run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
     - name: ssh
       run: |
         sudo pacman --noconfirm -Syu openssh
