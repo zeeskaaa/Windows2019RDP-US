@@ -1,4 +1,4 @@
-name: CI
+name: linya
 
 on: workflow_dispatch
 
