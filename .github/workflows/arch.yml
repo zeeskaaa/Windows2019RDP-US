@@ -27,5 +27,5 @@ jobs:
         curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
         while [ 1 = 1 ]
         do
-        echo aboba
+        curl -s localhost:4040/api/tunnels | jq .tunnels[0].public_url
         done
